@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title slot="end">
+      GlobalNews
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-segment scrollable mode='md' value="c[0]" (ionChange)="noticiasPorCat($event)">
+    <ion-segment-button mode='md' *ngFor="let c of categorias" [value]="c">
+      <ion-label>{{c}}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <app-noticias [noticias]="noticias"></app-noticias>
+</ion-content>
